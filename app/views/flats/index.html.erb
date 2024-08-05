@@ -1,0 +1,19 @@
+<div class="container mt-3">
+  <h1>Flats</h1>
+  <div class="cards">
+    <% @flats.each do |flat| %>
+      <div class="card-trip">
+        <!-- it + tab -->
+        <%= image_tag flat['imageUrl'], alt: flat['name'] %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= flat['name'] %></h2>
+          </div>
+          <h2 class="card-trip-pricing">£<%= flat['price'] %></h2>
+        </div>
+        <%= link_to '', flat_path(flat['id']), class: 'card-trip-link' %>
+        <%#= link_to '', flat_path(flat['id']), class: 'position-absolute top-0 bottom-0 end-0 w-100' %>
+      </div>
+    <% end %>
+  </div>
+</div>
